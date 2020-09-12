@@ -108,7 +108,7 @@ def _f(u, n):
 # ----------- PLEASE COMPLETE THE FUNCTION BELOW ----------
 def _integrate(t, n, _f):
     epsilon = 0.001
-    highBound = t
+    highBound = float(t)
     lowBound = 0.0
     simpsonOld = 0.0
     simpsonNew = epsilon
@@ -116,7 +116,7 @@ def _integrate(t, n, _f):
     #while (((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
     while (abs((simpsonNew - simpsonOld) / simpsonNew) == 1):
         simpsonOld = simpsonNew
-        w=(t-0.0)/s
+        w=(t-lowBound)/s
        # w = (highBound - lowBound) / s
         simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
 #        simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
