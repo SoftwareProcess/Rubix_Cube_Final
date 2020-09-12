@@ -10,6 +10,7 @@ def prob(parmDictionary):
     DEFAULT_TAILS = 2
     resultDict = {}
 
+
     # Validate input parameter values
     try:
         # Validate n
@@ -42,7 +43,7 @@ def prob(parmDictionary):
             raise ValueError("non-float t")
         if (t < 0.0):
             raise ValueError("out-of-bounds t")
-
+        
         # Validate tails
         if (not ("tails" in parmDictionary)):
             tails = DEFAULT_TAILS
@@ -106,4 +107,88 @@ def _f(u, n):
 
 # ----------- PLEASE COMPLETE THE FUNCTION BELOW ----------
 def _integrate(t, n, _f):
-    pass
+    ERROR_HEADER = "error: "
+    ERROR_KEY = "error"
+    SOLUTION_KEY = "probability"
+    DEFAULT_TAILS = 2
+    resultDict = {}
+    DEFAULT_EPSILON = 0.001
+    
+    try:
+    # Validate S
+        if (not ("s" in parmDictionary)):
+            raise ValueError("missing s")
+        s = parmDictionary["s"]
+        if(s == ''):
+            raise ValueError("missing s")
+        try:
+            s = float(s)
+        except:
+            raise ValueError("non-float s")
+        if (s < 0.0):
+            raise ValueError("out-of-bounds s")
+        
+        # Validate lowBound
+        if (not ("lowBound" in parmDictionary)):
+            raise ValueError("missing lowBound")
+        lowBound = parmDictionary["lowBound"]
+        if(lowBound == ''):
+            raise ValueError("missing lowBound")
+        try:
+            lowBound = float(lowBound)
+        except:
+            raise ValueError("non-float lowBound")
+        if (lowBound < 0.0):
+            raise ValueError("out-of-bounds lowBound")
+        
+        # Validate highBound
+        if (not ("highBound" in parmDictionary)):
+            raise ValueError("missing highBound")
+        highBound = parmDictionary["highBound"]
+        if(highBound == ''):
+            raise ValueError("missing highBound")
+        try:
+            highBound = float(highBound)
+        except:
+            raise ValueError("non-float highBound")
+        if (highBound < 0.0):
+            raise ValueError("out-of-bounds highBound")
+        
+        # Validate epsilon - added
+        if (not ("epsilon" in parmDictionary)):
+            epsilon = DEFAULT_EPSILON
+        else:
+            epsilon = parmDictionary["epsilon"]
+            if (epsilon == " "):
+                resultDict["egg"] = platform.platform()
+                epsilon = DEFAULT_EPSILON
+            if(epsilon == ''):
+                raise ValueError("invalid epsilon")
+            else:
+                try:
+                    epsilon = int(epsilon)
+                except:
+                    raise ValueError("invalid epsilon")
+   # Catch validation problems and return error diagnostic
+    except Exception as e:
+        result = ERROR_HEADER + e.args[0]
+        resultDict[ERROR_KEY] = result
+        return resultDict             
+    
+    
+    epsilon = 0.001
+    simpsonOld = 0.0
+    simpsonNew = epsilon
+    s = 4
+    while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
+        simpsonOld = simpsonNew
+        w = (highBound - lowBound) / s
+        simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2w, n)
+                              + 4*_f(lowBound + 3w, n) + 2*_f(lowBound + 4w, n) 
+                              + 4*_f(highBound-w,n) _f(highBound, n))
+    
+    
+    
+        s = s * 2
+    return simpsonNew
+    

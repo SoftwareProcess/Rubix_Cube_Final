@@ -13,6 +13,11 @@ class ProbTest(TestCase):
         self.errorValue = "error:"
         self.errorKey = "error"
         self.solutionKey = "probability"
+        #Added setUp
+        self.nominalEpsilon = 0.001
+        self.nominalS = 4
+        self.nominalLowBound = 0
+        self.nominalHighBound = 16
         
     def tearDown(self):
         self.inputDictionary = {}
@@ -28,6 +33,18 @@ class ProbTest(TestCase):
         
     def setExtra(self, extra):
         self.inputDictionary["extra"] = extra
+    
+    def setEpsilon(self, epsilon):
+        self.inputDictionary["epsilon"] = epsilon
+        
+    def setS(self, s):
+        self.inputDictionary["s"] = s
+    
+    def setHighBound(self, highBound):
+        self.inputDictionary["highBound"] = highBound
+        
+    def setLowBound(self, lowBound):
+        self.inputDictionary["lowBound"] = lowBound
 
     # 100 prob
     #    Desired level of confidence:    boundary value analysis
@@ -205,3 +222,15 @@ class ProbTest(TestCase):
         result = prob(self.inputDictionary)
         self.assertIn(self.errorKey, result)
         self.assertIn(self.errorValue, result[self.errorKey])
+
+
+#Tests for _integrate()
+   # def test100_100ShouldIntegrateNominalCase1Tail(self):
+    #    self.setT(1.8946)
+     #   self.setN(7)
+      #  self.setTails(1)
+       # self.assertAlmostEqual(first, second, places, msg, delta))    
+    
+    #Possible missing things
+    #epsilon, s, lowBound, highBound
+                                            
