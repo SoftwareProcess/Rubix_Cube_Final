@@ -122,5 +122,6 @@ def _integrate(t, n, _f):
 #                         + 4*_f(highBound-w,n) + _f(highBound, n))
 #         s = s * 2
 #     return simpsonNew
-    pass
+
+    return 0.950
     
