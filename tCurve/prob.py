@@ -113,8 +113,8 @@ def _integrate(t, n, _f):
     simpsonOld = 0.0
     simpsonNew = epsilon
     s = 4.0
-    while (((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
-    #while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
+    #while (((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
+    while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
         simpsonOld = simpsonNew
         w = (highBound - lowBound) / s
         simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
