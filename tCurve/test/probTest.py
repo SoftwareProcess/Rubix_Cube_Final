@@ -1,5 +1,7 @@
 from unittest import TestCase
 from tCurve.prob import prob as prob
+from tCurve.prob import _f as _f
+from tCurve.prob import _integrate as _integrate
 import json
 
 
@@ -33,18 +35,7 @@ class ProbTest(TestCase):
         
     def setExtra(self, extra):
         self.inputDictionary["extra"] = extra
-    
-    def setEpsilon(self, epsilon):
-        self.inputDictionary["epsilon"] = epsilon
-        
-    def setS(self, s):
-        self.inputDictionary["s"] = s
-    
-    def setHighBound(self, highBound):
-        self.inputDictionary["highBound"] = highBound
-        
-    def setLowBound(self, lowBound):
-        self.inputDictionary["lowBound"] = lowBound
+
 
     # 100 prob
     #    Desired level of confidence:    boundary value analysis
@@ -225,11 +216,14 @@ class ProbTest(TestCase):
 
 
 #Tests for _integrate()
-   # def test100_100ShouldIntegrateNominalCase1Tail(self):
-    #    self.setT(1.8946)
-     #   self.setN(7)
-      #  self.setTails(1)
-       # self.assertAlmostEqual(first, second, places, msg, delta))    
+    def test100_100ShouldIntegrateNominalCase1Tail(self):
+        self.setT(self.nominalT)
+        self.setN(self.nominalN)
+        self.setTails(1)
+        expectedResult = 1.43218
+        result = _integrate(self.nominalT, self.nominalN, _f)
+        self.assertAlmostEqual(expectedResult, result, 3)   
+    
     
     #Possible missing things
     #epsilon, s, lowBound, highBound
