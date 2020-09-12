@@ -109,7 +109,7 @@ def _f(u, n):
 def _integrate(t, n, _f):
     epsilon = 0.001
     highBound = t
-    lowBound = 0
+    lowBound = 0.0
     simpsonOld = 0.0
     simpsonNew = epsilon
     s = 4
