@@ -116,13 +116,22 @@ def _integrate(t, n, _f):
     #while (((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
     while (abs((simpsonNew - simpsonOld) / simpsonNew) == 1):
         simpsonOld = simpsonNew
-        w=(t-lowBound)/s
-       # w = (highBound - lowBound) / s
-        simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
-#        simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
-     #                   + 4*_f(lowBound + 3*w, n) + 2*_f(lowBound + 4*w, n)
-                        + 4*_f(lowBound+3*w, n) + _f(lowBound+4*w, n)) 
-    #                    + 4*_f(highBound-w, n) + _f(highBound, n))
+        w=(t-lowBound)/s # w = (highBound - lowBound) / s
+       #Create a variable with S+1, use mod to determine which category it belongs into
+       #Make a different variable to keep track of multiplications
+        #simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
+                   #     + 4*_f(lowBound+3*w, n) + _f(lowBound+4*w, n)) 
+        x = s+1
+        multi = 0
+        simpsonNew = (w/3) * (_f(lowBound,n))
+        count = 2
+        while(count < x):
+            if(count % 2):
+                simpsonNew += 4*_f(lowBound + multi * w, n) 
+            else:
+                simpsonNew += 2*_f(lowBound + multi * w, n)
+            multi += 1
+            count += 1
         s = s * 2
     return simpsonNew
     
