@@ -117,19 +117,19 @@ def _integrate(t, n, _f):
     while (abs((simpsonNew - simpsonOld) / simpsonNew) == 1):
         simpsonOld = simpsonNew
         w=(t-lowBound)/s # w = (highBound - lowBound) / s
-        simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
-                        + 4*_f(lowBound+3*w, n) + _f(lowBound+4*w, n)) 
+#         simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
+#                         + 4*_f(lowBound+3*w, n) + _f(lowBound+4*w, n)) 
 #         simpsonNew = (w/3) * (_f(lowBound,n))
-#         count = 2
-#         multi = 1
-#         while(count < s):
-#             if(count % 2 == 0):
-#                 simpsonNew += 4*_f(lowBound + (multi * w), n) 
-#             else:
-#                 simpsonNew += 2*_f(lowBound + (multi * w), n)
-#             multi += 1
-#             count += 1
-#         simpsonNew += _f(highBound,n)
+        count = 2
+        multi = 1
+        while(count < s):
+            if(count % 2 == 0):
+                simpsonNew += 4*_f(lowBound + (multi * w), n) 
+            else:
+                simpsonNew += 2*_f(lowBound + (multi * w), n)
+            multi += 1
+            count += 1
+#         #simpsonNew += _f(highBound,n)
         s = s * 2
     return simpsonNew
     
