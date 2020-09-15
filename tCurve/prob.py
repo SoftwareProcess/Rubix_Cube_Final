@@ -107,26 +107,26 @@ def _f(u, n):
 
 # ----------- PLEASE COMPLETE THE FUNCTION BELOW ----------
 def _integrate(t, n, _f):
-    epsilon = 0.001
+    epsilon = 0.01
     highBound = float(t)
     lowBound = 0.0
     simpsonOld = 0.0
     simpsonNew = epsilon
     s = 8.0
-    while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
-        simpsonOld = simpsonNew
-        w=(t-lowBound)/s
-        if (s == 4):
+   # while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
+    simpsonOld = simpsonNew
+    w=(t-lowBound)/s
+    if (s == 4):
              # w = (highBound - lowBound) / s
-            simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
+        simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
                                   + 4*_f(lowBound+3*w, n) + _f(lowBound+4*w, n)) 
-        if (s == 8):
+    if (s == 8):
             simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
                         + 4*_f(lowBound+3*w, n) + 2*_f(lowBound + 4*w, n) + 4*_f(lowBound + 5*w, n) 
                         + 2*_f(lowBound + 6*w, n) + 4*_f(lowBound + 7*w, n)
                         + _f(lowBound+ 8*w, n))
-        else:
-            simpsonOld = 1     
+        #else:
+            #simpsonOld = 1     
 #         simpsonNew = (w/3) * (_f(lowBound,n))
 #         count = 2
 #         multi = 1
@@ -139,6 +139,6 @@ def _integrate(t, n, _f):
 #             multi += 1
 #             count += 1
 #         simpsonNew += _f(lowBound+(multi*w),n)
-        s = s * 2
+        #s = s * 2
     return simpsonNew
     
