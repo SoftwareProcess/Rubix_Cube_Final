@@ -218,7 +218,7 @@ class ProbTest(TestCase):
 #Tests for _integrate()
     def test200_500ShouldIntegrateNominalCase1Tail(self):
         self.setT(5.8049)
-        self.setN(7)
+        self.setN(3)
         self.setTails(2)
         expectedResult = 1.035
         result = _integrate(self.inputDictionary["t"], self.inputDictionary["n"], _f)
