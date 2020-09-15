@@ -129,10 +129,10 @@ def _integrate(t, n, _f):
         if (s == 16):
             simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
                         + 4*_f(lowBound+3*w, n) + 2*_f(lowBound + 4*w, n) + 4*_f(lowBound + 5*w, n) 
-                        + 2*_f(lowBound + 6*w, n) + 4*_f(lowBound + 7*w, n)
-                        + 2*_f(lowBound+ 8*w, n)) + 4*_f(lowBound+ 9*w, n) + 2*_f(lowBound + 10*w, n)
+                        + 2*_f(lowBound + 6*w, n) + 4*_f(lowBound + 7*w, n) + 2*_f(lowBound+ 8*w, n) 
+                        + 4*_f(lowBound+ 9*w, n) + 2*_f(lowBound + 10*w, n)
                         + 4*_f(lowBound+ 11*w, n) + 2*_f(lowBound + 12*w, n) + 4*_f(lowBound+ 13*w, n) 
-                        + 2*_f(lowBound + 14*w, n) + 4*_f(lowBound+ 15*w, n) + _f(lowBound + 16*w, n)
+                        + 2*_f(lowBound + 14*w, n) + 4*_f(lowBound+ 15*w, n) + _f(lowBound + 16*w, n))
         #else:
             #simpsonOld = 1     
 #         simpsonNew = (w/3) * (_f(lowBound,n))
