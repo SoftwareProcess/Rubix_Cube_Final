@@ -118,7 +118,7 @@ def _integrate(t, n, _f):
     w=(t-lowBound)/s
     if (s == 4):
              # w = (highBound - lowBound) / s
-    simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
+             simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
                                   + 4*_f(lowBound+3*w, n) + _f(lowBound+4*w, n)) 
     if (s == 8):
              simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
