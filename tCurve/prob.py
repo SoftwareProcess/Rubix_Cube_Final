@@ -121,7 +121,7 @@ def _integrate(t, n, _f):
        #Make a different variable to keep track of multiplications
         #simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
                    #     + 4*_f(lowBound+3*w, n) + _f(lowBound+4*w, n)) 
-        x = s+1
+        x = s-1
         multi = 0
         simpsonNew = (w/3) * (_f(lowBound,n))
         count = 2
@@ -132,6 +132,7 @@ def _integrate(t, n, _f):
                 simpsonNew += 2*_f(lowBound + multi * w, n)
             multi += 1
             count += 1
+        simpsonNew += _f(highBound,n)
         s = s * 2
     return simpsonNew
     
