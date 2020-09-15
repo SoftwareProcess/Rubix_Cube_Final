@@ -118,12 +118,12 @@ class ProbTest(TestCase):
 #         result = prob(self.inputDictionary)
 #         self.assertAlmostEqual(result[self.solutionKey], 0.600, 3)
 #  
-#     def test100_060ShouldCalculateHighNLowT2TailEdgeCase(self):
-#         self.setT(0.2567)
-#         self.setN(20)
-#         self.setTails(2)
-#         result = prob(self.inputDictionary)
-#         self.assertAlmostEqual(result[self.solutionKey], 0.200, 3)
+    def test100_060ShouldCalculateHighNLowT2TailEdgeCase(self):
+        self.setT(0.2567)
+        self.setN(20)
+        self.setTails(2)
+        result = prob(self.inputDictionary)
+        self.assertAlmostEqual(result[self.solutionKey], 0.200, 3)
 # #  
     def test100_070ShouldCalculateLowNHighT1EdgeCase(self):
         self.setT(5.8409)
