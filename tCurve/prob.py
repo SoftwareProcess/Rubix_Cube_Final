@@ -113,7 +113,7 @@ def _integrate(t, n, _f):
     lowBound = 0.0
     simpsonOld = 0.0
     simpsonNew = epsilon
-    s = 8.0
+    s = 4.0
    # while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
     simpsonOld = simpsonNew
     w=(t-lowBound)/s
