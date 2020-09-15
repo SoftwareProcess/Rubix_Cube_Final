@@ -139,27 +139,11 @@ def _integrate(t, n, _f):
     multiplier = int(1)      #The multiplier in the summations
     while (multiplier < s-1):
         if ((multiplier % 2) == 1):  #when s is odd
-                    simpsonNew = simpsonNew + 4*_f(lowBound + multiplier * w, n)
+                    simpsonNew = simpsonNew + 4*_f(lowBound + (multiplier * w), n)
         if ((multiplier % 2) == 0):  #when s is even
-                    simpsonNew = simpsonNew + 2*_f(lowBound + multiplier * w, n)
+                    simpsonNew = simpsonNew + 2*_f(lowBound + (multiplier * w), n)
         multiplier = multiplier+1  # next term      
     simpsonNew = (w/3)*(simpsonNew + _f(highBound, n)) # add the last term to the Simpson and multiply * w/3   
- 
-        
-        #else:
-            #simpsonOld = 1     
-#         simpsonNew = (w/3) * (_f(lowBound,n))
-#         count = 2
-#         multi = 1
-#         x = s-1
-#         while(count <= s):
-#             if(count % 2 == 0):
-#                 simpsonNew += 4*_f(lowBound + (multi*w), n) 
-#             else:
-#                 simpsonNew += 2*_f(lowBound + (multi*w), n)
-#             multi += 1
-#             count += 1
-#         simpsonNew += _f(lowBound+(multi*w),n)
         #s = s * 2
     return simpsonNew
     
