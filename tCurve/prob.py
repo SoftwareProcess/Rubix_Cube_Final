@@ -124,7 +124,7 @@ def _integrate(t, n, _f):
         count = 2
         multi = 1
         x = s-1
-        while(count <= x):
+        while(count <= s):
             if(count % 2 == 0):
                 simpsonNew += 4*_f(lowBound + (multi*w), n) 
             else:
