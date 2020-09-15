@@ -127,9 +127,9 @@ def _integrate(t, n, _f):
         count = 2
         while(count < x):
             if(count % 2 == 0):
-                simpsonNew += 4*_f(lowBound + multi * w, n) 
+                simpsonNew += 4*_f(lowBound + (multi * w), n) 
             else:
-                simpsonNew += 2*_f(lowBound + multi * w, n)
+                simpsonNew += 2*_f(lowBound + (multi * w), n)
             multi += 1
             count += 1
         simpsonNew += _f(highBound,n)
