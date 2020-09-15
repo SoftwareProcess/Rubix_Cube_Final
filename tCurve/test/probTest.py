@@ -220,7 +220,7 @@ class ProbTest(TestCase):
         self.setT(16)
         self.setN(4)
         self.setTails(1)
-        expectedResult = 1.035
+        expectedResult = 1.036
         result = _integrate(self.nominalT, self.nominalN, _f)
         self.assertAlmostEqual(expectedResult, result, 3)   
     
