@@ -131,7 +131,7 @@ def _integrate(t, n, _f):
                 simpsonNew += 2*_f(lowBound + (multi*w), n)
             multi += 1
             count += 1
-        simpsonNew += _f(highBound,n)
+        simpsonNew += _f(lowBound+(multi*w),n)
         s = s * 2
     return simpsonNew
     
