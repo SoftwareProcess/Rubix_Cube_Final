@@ -34,7 +34,9 @@ def prob(parmDictionary):
         # Validate t
         if (not ("t" in parmDictionary)):
             raise ValueError("missing t")
+        print(t)
         t = parmDictionary["t"]
+        print(t)
         if(t == ''):
             raise ValueError("missing t")
         try:
