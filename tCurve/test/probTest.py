@@ -82,14 +82,14 @@ class ProbTest(TestCase):
         self.setExtra("a")
         result = prob(self.inputDictionary)
         self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
-#     
-#     def test100_010ShouldCalculateNominalCase1Tail(self):
-#         self.setT(1.8946)
-#         self.setN(7)
-#         self.setTails(1)
-#         result = prob(self.inputDictionary)
-#         self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
-#  
+     
+    def test100_010ShouldCalculateNominalCase1Tail(self):
+        self.setT(1.8946)
+        self.setN(7)
+        self.setTails(1)
+        result = prob(self.inputDictionary)
+        self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
+  
 #     def test100_020ShouldCalculateNominalCase2Tail(self):
 #         self.setT(1.8946)
 #         self.setN(7)
