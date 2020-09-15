@@ -221,7 +221,7 @@ class ProbTest(TestCase):
         self.setN(7)
         self.setTails(2)
         expectedResult = 1.035
-        result = _integrate(self.nominalT, self.nominalN, _f)
+        result = _integrate(self.T, self.N, _f)
         self.assertAlmostEqual(expectedResult, result, 3)   
     
 #     def test200_210ShouldIntegrateNominalCase2Tail(self):
