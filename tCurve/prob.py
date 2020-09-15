@@ -122,14 +122,15 @@ def _integrate(t, n, _f):
 #         simpsonNew = (w/3) * (_f(lowBound,n))
         count = 2
         multi = 1
-        while(count < s):
+        x = s-1
+        while(count < x):
             if(count % 2 == 0):
                 simpsonNew += 4*_f(lowBound + (multi * w), n) 
             else:
                 simpsonNew += 2*_f(lowBound + (multi * w), n)
             multi += 1
             count += 1
-#         #simpsonNew += _f(highBound,n)
+        simpsonNew += _f(highBound,n)
         s = s * 2
     return simpsonNew
     
