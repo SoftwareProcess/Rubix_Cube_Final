@@ -132,7 +132,7 @@ def _integrate(t, n, _f):
                         + 2*_f(lowBound + 6*w, n) + 4*_f(lowBound + 7*w, n) + 2*_f(lowBound+ 8*w, n) 
                         + 4*_f(lowBound+ 9*w, n) + 2*_f(lowBound + 10*w, n)
                         + 4*_f(lowBound+ 11*w, n) + 2*_f(lowBound + 12*w, n) + 4*_f(lowBound+ 13*w, n) 
-                        + 2*_f(lowBound + 14*w, n) + 4*_f(lowBound+ 15*w, n) + _f(lowBound + 16*w, n))
+                        + 2*_f(lowBound + 14*w, n) + 4*_f(lowBound+ 15*w, n) + _f(highBound, n))
          
     #aummation of the Simpson
 #     simpsonNew = _f(lowBound,n)    #start calculating the Simpson
