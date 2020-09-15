@@ -216,13 +216,13 @@ class ProbTest(TestCase):
 
 
 #Tests for _integrate()
-#     def test100_100ShouldIntegrateNominalCase1Tail(self):
-#         self.setT(self.nominalT)
-#         self.setN(self.nominalN)
-#         self.setTails(1)
-#         expectedResult = 1.43218
-#         result = _integrate(self.nominalT, self.nominalN, _f)
-#         self.assertAlmostEqual(expectedResult, result, 3)   
+    def test100_100ShouldIntegrateNominalCase1Tail(self):
+        self.setT(self.nominalT)
+        self.setN(self.nominalN)
+        self.setTails(1)
+        expectedResult = 1.43218
+        result = _integrate(self.nominalT, self.nominalN, _f)
+        self.assertAlmostEqual(expectedResult, result, 3)   
     
     
     #Possible missing things
