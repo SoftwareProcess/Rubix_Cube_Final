@@ -132,5 +132,5 @@ def _integrate(t, n, _f):
 #             count += 1
 #         simpsonNew += _f(lowBound+(multi*w),n)
 #         s = s * 2
-    return lowBound
+    return simpsonNew
     
