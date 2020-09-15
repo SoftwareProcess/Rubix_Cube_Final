@@ -107,7 +107,7 @@ def _f(u, n):
 
 # ----------- PLEASE COMPLETE THE FUNCTION BELOW ----------
 def _integrate(t, n, _f):
-    epsilon = 0.01
+    epsilon = 1
     highBound = float(t)
     lowBound = 0.0
     simpsonOld = 0.0
