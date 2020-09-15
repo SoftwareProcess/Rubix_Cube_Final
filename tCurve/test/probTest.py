@@ -75,14 +75,14 @@ class ProbTest(TestCase):
     #        tails:  invalid tails    tails = 3
     #
     # Happy path
-#     def test100_010ShouldCalculateNominalCase1TailHttp(self):
-#         self.setT(1.8946)
-#         self.setN(7)
-#         self.setTails(1)
-#         self.setExtra("a")
-#         result = prob(self.inputDictionary)
-#         self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
-#      
+    def test100_010ShouldCalculateNominalCase1TailHttp(self):
+        self.setT(1.8946)
+        self.setN(7)
+        self.setTails(1)
+        self.setExtra("a")
+        result = prob(self.inputDictionary)
+        self.assertAlmostEqual(result[self.solutionKey], 0.950, 3)
+      
 #     def test100_010ShouldCalculateNominalCase1Tail(self):
 #         self.setT(1.8946)
 #         self.setN(7)
