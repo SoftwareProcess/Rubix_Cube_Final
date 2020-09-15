@@ -108,13 +108,13 @@ def _f(u, n):
 
 # ----------- PLEASE COMPLETE THE FUNCTION BELOW ----------
 def _integrate(t, n, _f):
-    epsilon = 0.01
+    epsilon = 0.007
     highBound = float(t)
     lowBound = 0.0
     simpsonOld = 0.0
     simpsonNew = epsilon
     s = 4.0
-   # while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
+    while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
     simpsonOld = simpsonNew
     w=(t-lowBound)/s
     if (s == 4):
@@ -140,6 +140,6 @@ def _integrate(t, n, _f):
 #             multi += 1
 #             count += 1
 #         simpsonNew += _f(lowBound+(multi*w),n)
-        #s = s * 2
+        s = s * 2
     return simpsonNew
     
