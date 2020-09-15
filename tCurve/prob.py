@@ -145,5 +145,5 @@ def _integrate(t, n, _f):
 #         multiplier = multiplier+1  # next term      
 #     simpsonNew = (w/3)*(simpsonNew + _f(lowBound + (multiplier*w), n)) # add the last term to the Simpson and multiply * w/3   
 #         #s = s * 2
-#     return simpsonNew
-#     
+    return simpsonNew
+    
