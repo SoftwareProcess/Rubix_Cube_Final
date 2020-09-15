@@ -35,7 +35,6 @@ def prob(parmDictionary):
         if (not ("t" in parmDictionary)):
             raise ValueError("missing t")
         t = parmDictionary["t"]
-        print(t)
         if(t == ''):
             raise ValueError("missing t")
         try:
@@ -113,7 +112,7 @@ def _integrate(t, n, _f):
     lowBound = 0.0
     simpsonOld = 0.0
     simpsonNew = epsilon
-    s = 8.0
+    s = 16.0
     while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
         simpsonOld = simpsonNew
         w=(t-lowBound)/s
@@ -126,6 +125,14 @@ def _integrate(t, n, _f):
                         + 4*_f(lowBound+3*w, n) + 2*_f(lowBound + 4*w, n) + 4*_f(lowBound + 5*w, n) 
                         + 2*_f(lowBound + 6*w, n) + 4*_f(lowBound + 7*w, n)
                         + _f(lowBound+ 8*w, n))
+            
+        if (s == 16):
+            simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
+                        + 4*_f(lowBound+3*w, n) + 2*_f(lowBound + 4*w, n) + 4*_f(lowBound + 5*w, n) 
+                        + 2*_f(lowBound + 6*w, n) + 4*_f(lowBound + 7*w, n)
+                        + 2*_f(lowBound+ 8*w, n)) + 4*_f(lowBound+ 9*w, n) + 2*_f(lowBound + 10*w, n)
+                        + 4*_f(lowBound+ 11*w, n) + 2*_f(lowBound + 12*w, n) + 4*_f(lowBound+ 13*w, n) 
+                        + 2*_f(lowBound + 14*w, n) + 4*_f(lowBound+ 15*w, n) + _f(lowBound + 16*w, n)
         #else:
             #simpsonOld = 1     
 #         simpsonNew = (w/3) * (_f(lowBound,n))
