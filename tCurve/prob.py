@@ -114,7 +114,7 @@ def _integrate(t, n, _f):
     simpsonNew = epsilon
     s = 4.0
     #while (((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
-    while (abs((simpsonNew - simpsonOld) / simpsonNew) == 1):
+    while (abs((simpsonNew - simpsonOld) / simpsonNew) > 1):
         simpsonOld = simpsonNew
         w=(t-lowBound)/s # w = (highBound - lowBound) / s
        #Create a variable with S+1, use mod to determine which category it belongs into
