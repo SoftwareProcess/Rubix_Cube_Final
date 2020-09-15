@@ -114,7 +114,7 @@ def _integrate(t, n, _f):
     simpsonNew = epsilon
     s = 8.0
     #while (abs((simpsonNew - simpsonOld) / simpsonNew) > epsilon):
-        simpsonOld = simpsonNew
+        #simpsonOld = simpsonNew
         w=(t-lowBound)/s
         if (s == 4):
              # w = (highBound - lowBound) / s
