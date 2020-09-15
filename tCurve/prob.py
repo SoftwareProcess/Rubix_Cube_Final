@@ -141,9 +141,9 @@ def _integrate(t, n, _f):
         if ((multiplier % 2) == 1):  #when s is odd
                     simpsonNew = simpsonNew + 4*_f(lowBound + multiplier * w, n)
         if ((multiplier % 2) == 0):  #when s is even
-                    simpsonNew = simpsonNew + 2*_f(lowBound + Multiplier * w, n)
+                    simpsonNew = simpsonNew + 2*_f(lowBound + multiplier * w, n)
         multiplier = multiplier+1  # next term      
-        simpsonNew = (w/3)*(simpsonNew + _f(highbound, n)) # add the last term to the Simpson and multiply * w/3   
+        simpsonNew = (w/3)*(simpsonNew + _f(highBound, n)) # add the last term to the Simpson and multiply * w/3   
  
         
         #else:
