@@ -240,6 +240,14 @@ class ProbTest(TestCase):
         expectedResult = 0.272
         result = _integrate(self.inputDictionary["t"], self.inputDictionary["n"], _f)
         self.assertAlmostEqual(expectedResult, result, 3)   
+    
+    def test200_530ShouldIntegrateHighHighT1TailEdgeCase(self):
+        self.setT(2.8453)
+        self.setN(20)
+        self.setTails(1)
+        expectedResult = 0.272
+        result = _integrate(self.inputDictionary["t"], self.inputDictionary["n"], _f)
+        self.assertAlmostEqual(expectedResult, result, 3)   
        
     
     #Possible missing things
