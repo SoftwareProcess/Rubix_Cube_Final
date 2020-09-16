@@ -233,13 +233,13 @@ class ProbTest(TestCase):
         result = _integrate(self.inputDictionary["t"], self.inputDictionary["n"], _f)
         self.assertAlmostEqual(expectedResult, result, 3)   
 #         
-#     def test200_520ShouldIntegrateNominalCase2Tail(self):
-#         self.setT(1.8946)
-#         self.setN(7)
-#         self.setTails(2)
-#         expectedResult = 1.169
-#         result = _integrate(self.inputDictionary["t"], self.inputDictionary["n"], _f)
-#         self.assertAlmostEqual(expectedResult, result, 3)   
+    def test200_520ShouldIntegrateNominalCase2Tail(self):
+        self.setT(0.2767)
+        self.setN(3)
+        self.setTails(1)
+        expectedResult = 1.169
+        result = _integrate(self.inputDictionary["t"], self.inputDictionary["n"], _f)
+        self.assertAlmostEqual(expectedResult, result, 3)   
        
     
     #Possible missing things
