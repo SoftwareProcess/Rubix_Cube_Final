@@ -137,7 +137,7 @@ def _integrate(t, n, _f):
     #aummation of the Simpson
     simpsonNew = _f(lowBound,n)    #start calculating the Simpson
     multiplier = int(1)      #The multiplier in the summations
-    while (multiplier < s-1):
+    while (multiplier < s):
         if ((multiplier % 2) == 1):  #when s is odd
                     simpsonNew = simpsonNew + 4*_f(lowBound + (multiplier * w), n)
         if ((multiplier % 2) == 0):  #when s is even
