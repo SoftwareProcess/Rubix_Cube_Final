@@ -126,24 +126,24 @@ def _integrate(t, n, _f):
 #                         + 2*_f(lowBound + 6*w, n) + 4*_f(lowBound + 7*w, n)
 #                         + _f(lowBound+ 8*w, n))
 #              
-    if (s == 16):
-            simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
-                        + 4*_f(lowBound+3*w, n) + 2*_f(lowBound + 4*w, n) + 4*_f(lowBound + 5*w, n) 
-                        + 2*_f(lowBound + 6*w, n) + 4*_f(lowBound + 7*w, n) + 2*_f(lowBound+ 8*w, n) 
-                        + 4*_f(lowBound+ 9*w, n) + 2*_f(lowBound + 10*w, n)
-                        + 4*_f(lowBound+ 11*w, n) + 2*_f(lowBound + 12*w, n) + 4*_f(lowBound+ 13*w, n) 
-                        + 2*_f(lowBound + 14*w, n) + 4*_f(lowBound+ 15*w, n) + _f(lowBound + 16*w, n))
-#          
+#     if (s == 16):
+#             simpsonNew = (w/3) * (_f(lowBound,n) + 4*_f(lowBound + w, n) + 2*_f(lowBound + 2*w, n)
+#                         + 4*_f(lowBound+3*w, n) + 2*_f(lowBound + 4*w, n) + 4*_f(lowBound + 5*w, n) 
+#                         + 2*_f(lowBound + 6*w, n) + 4*_f(lowBound + 7*w, n) + 2*_f(lowBound+ 8*w, n) 
+#                         + 4*_f(lowBound+ 9*w, n) + 2*_f(lowBound + 10*w, n)
+#                         + 4*_f(lowBound+ 11*w, n) + 2*_f(lowBound + 12*w, n) + 4*_f(lowBound+ 13*w, n) 
+#                         + 2*_f(lowBound + 14*w, n) + 4*_f(lowBound+ 15*w, n) + _f(lowBound + 16*w, n))
+# #          
     #aummation of the Simpson
-#     simpsonNew = _f(lowBound,n)    #start calculating the Simpson
-#     multiplier = int(1)      #The multiplier in the summations
-#     while (multiplier < s-1):
-#         if ((multiplier % 2) == 1):  #when s is odd
-#                     simpsonNew = simpsonNew + 4*_f(lowBound + (multiplier * w), n)
-#         if ((multiplier % 2) == 0):  #when s is even
-#                     simpsonNew = simpsonNew + 2*_f(lowBound + (multiplier * w), n)
-#         multiplier = multiplier+1  # next term      
-#     simpsonNew = (w/3)*(simpsonNew + _f(highBound, n)) # add the last term to the Simpson and multiply * w/3   
-#         #s = s * 2
+    simpsonNew = _f(lowBound,n)    #start calculating the Simpson
+    multiplier = int(1)      #The multiplier in the summations
+    while (multiplier < s-1):
+        if ((multiplier % 2) == 1):  #when s is odd
+                    simpsonNew = simpsonNew + 4*_f(lowBound + (multiplier * w), n)
+        if ((multiplier % 2) == 0):  #when s is even
+                    simpsonNew = simpsonNew + 2*_f(lowBound + (multiplier * w), n)
+        multiplier = multiplier+1  # next term      
+    simpsonNew = (w/3)*(simpsonNew + _f(highBound, n)) # add the last term to the Simpson and multiply * w/3   
+        #s = s * 2
     return simpsonNew
     
